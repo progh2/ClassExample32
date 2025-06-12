@@ -26,9 +26,9 @@ namespace ClassExample32
 
         class Child : Parent
         {
-            public string variable = "하이딩";
+            public new string variable = "하이딩";
 
-            public void Method() { Console.WriteLine("자식의 메서드"); }
+            public new void Method() { Console.WriteLine("자식의 메서드"); }
 
             public void CountChilde()
             {
