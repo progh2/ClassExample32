@@ -12,6 +12,7 @@ namespace ClassExample32
         {
             public int variable = 273;
             public void Method() { Console.WriteLine("부모의 메서드"); }
+            public virtual void MethodO() { Console.WriteLine("부모의 메서드"); }
 
             public static int counter = 0;
 
@@ -29,6 +30,8 @@ namespace ClassExample32
             public new string variable = "하이딩";
 
             public new void Method() { Console.WriteLine("자식의 메서드"); }
+
+            public override void MethodO() { Console.WriteLine("자식의 메서드"); }
 
             public void CountChilde()
             {
@@ -61,6 +64,10 @@ namespace ClassExample32
             Console.WriteLine((c as Parent).variable );// 하이딩 된 부모의 변수 접근
             c.Method();
             ((Parent)c).Method();// 하이딩 된 부모의 메서드 접근
+
+            // 오버라이딩
+            c.MethodO();
+            ((Parent)c).MethodO();// 오버라이딩 된 부모의 메서드 접근(자식 메서드 내용으로 덮어써짐)
 
             Child childA = new Child();
             Child childB = new Child("string");
